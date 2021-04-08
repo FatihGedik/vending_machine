@@ -21,6 +21,8 @@ public class OtomatProgramı extends JFrame implements ActionListener {
    JRadioButton onRadio= new JRadioButton("10 TL", false);
    ButtonGroup paraGroup = new ButtonGroup();
    JButton btnSubmit = new JButton("Para Ekle");
+   
+   
    JPanel panel = new JPanel();
    JLabel paraText = new JLabel("< Bakiye 0.00 TL >");
     
@@ -32,24 +34,25 @@ public class OtomatProgramı extends JFrame implements ActionListener {
         
         setSize(width,height);
         setTitle("İçecek Otomatı");
-        setLayout(new FlowLayout());
+        setLayout(new FlowLayout(FlowLayout.RIGHT));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         panel.setLayout(new GridLayout(0,1));
-        panel.setPreferredSize(new Dimension(300,100));
+        panel.setPreferredSize(new Dimension(150,250));
         panel.add(elliRadio);
         panel.add(birRadio);
         panel.add(besRadio);
         panel.add(onRadio);
         
         paraText.setFont(new Font("Tahoma", Font.BOLD, 20));
-        
+   
         add(panel);
         add(btnSubmit);        
         add (paraText);
         setVisible(true);
         
         btnSubmit.addActionListener(this);
+        
     }
     
  float bakiye = 0;
@@ -84,6 +87,6 @@ public class OtomatProgramı extends JFrame implements ActionListener {
         
     }
     public static void main(String[] args) {
-       new OtomatProgramı(700,300);
+       new OtomatProgramı(1000,500);
     }
 }
