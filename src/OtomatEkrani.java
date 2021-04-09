@@ -1,58 +1,38 @@
-
-import java.awt.Color;
-import java.awt.Image;
-import static java.lang.System.console;
-import static java.rmi.server.LogStream.log;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import static javafx.scene.input.KeyCode.R;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
 
-
-
-/**
- *
- * @author fgedi
- */
 public class OtomatEkrani extends javax.swing.JFrame {
-
   
     public OtomatEkrani() {
         initComponents();
-         lblBakiye.setText(" Bakiye: " + Float.toString(bakiye)+ "0 TL");
-         lblUrünBakiye.setText("Bakiye: " + Integer.toString(bakiyeUrün)+ "0 TL" ); 
-        
+         lblBakiye.setText(" Bakiye: " + Double.toString(bakiye)+ "0 TL");
+         lblUrunBakiye.setText(" Ürün Fiyatı: " + Double.toString(urunFiyat)+ "0 TL" );         
         }
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnGrupPara = new javax.swing.ButtonGroup();
         jDialog1 = new javax.swing.JDialog();
-        btnGrupUrün = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblBakiye = new java.awt.Label();
-        elliRadio = new javax.swing.JRadioButton();
-        birRadio = new javax.swing.JRadioButton();
-        besRadio = new javax.swing.JRadioButton();
-        onRadio = new javax.swing.JRadioButton();
-        btnEkle = new javax.swing.JButton();
-        btnEkle1 = new javax.swing.JButton();
+        btnParaIade = new javax.swing.JButton();
+        btnElliKrs = new javax.swing.JButton();
+        btnBirTl = new javax.swing.JButton();
+        btnBesTl = new javax.swing.JButton();
+        btnOnTl = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        lblUrünBakiye = new java.awt.Label();
-        btnUrünEkle = new javax.swing.JButton();
-        kolaRadio = new javax.swing.JRadioButton();
-        fantaRadio = new javax.swing.JRadioButton();
-        gazozRadio = new javax.swing.JRadioButton();
-        btnUrünIade = new javax.swing.JButton();
+        lblUrunBakiye = new java.awt.Label();
+        btnUrunEkle = new javax.swing.JButton();
+        btnUrunIade = new javax.swing.JButton();
         btnKola = new javax.swing.JButton();
         btnFanta = new javax.swing.JButton();
         btnGazoz = new javax.swing.JButton();
+        lblKola = new java.awt.Label();
+        lblFanta = new java.awt.Label();
+        lblGazoz = new java.awt.Label();
 
         jDialog1.setModal(true);
         jDialog1.setSize(new java.awt.Dimension(200, 200));
@@ -76,41 +56,44 @@ public class OtomatEkrani extends javax.swing.JFrame {
         lblBakiye.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblBakiye.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnGrupPara.add(elliRadio);
-        elliRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        elliRadio.setText("0.50 Krş");
-        elliRadio.setActionCommand("50");
-
-        btnGrupPara.add(birRadio);
-        birRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        birRadio.setText("1 TL");
-        birRadio.setActionCommand("1");
-
-        btnGrupPara.add(besRadio);
-        besRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        besRadio.setText("5 TL ");
-        besRadio.setActionCommand("5");
-
-        btnGrupPara.add(onRadio);
-        onRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        onRadio.setText("10 TL");
-        onRadio.setActionCommand("10");
-
-        btnEkle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnEkle.setText("Para Ekle");
-        btnEkle.setActionCommand("btnEkle");
-        btnEkle.addActionListener(new java.awt.event.ActionListener() {
+        btnParaIade.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnParaIade.setText("Para İade");
+        btnParaIade.setActionCommand("btnIade");
+        btnParaIade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEkleActionPerformed(evt);
+                btnParaIadeActionPerformed(evt);
             }
         });
 
-        btnEkle1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnEkle1.setText("Para İade");
-        btnEkle1.setActionCommand("btnIade");
-        btnEkle1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEkle1ActionPerformed(evt);
+        btnElliKrs.setBackground(java.awt.Color.white);
+        btnElliKrs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/50.png"))); // NOI18N
+        btnElliKrs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnElliKrs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnElliKrsMouseClicked(evt);
+            }
+        });
+
+        btnBirTl.setBackground(java.awt.Color.white);
+        btnBirTl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/1.png"))); // NOI18N
+        btnBirTl.setToolTipText("");
+        btnBirTl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBirTlMouseClicked(evt);
+            }
+        });
+
+        btnBesTl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/5.png"))); // NOI18N
+        btnBesTl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBesTlMouseClicked(evt);
+            }
+        });
+
+        btnOnTl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/10.png"))); // NOI18N
+        btnOnTl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOnTlMouseClicked(evt);
             }
         });
 
@@ -119,97 +102,103 @@ public class OtomatEkrani extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBesTl, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnElliKrs, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnOnTl, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBirTl, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(157, 157, 157)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(elliRadio)
-                        .addGap(28, 28, 28)
-                        .addComponent(birRadio)
-                        .addGap(37, 37, 37)
-                        .addComponent(besRadio)
-                        .addGap(18, 18, 18)
-                        .addComponent(onRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnEkle1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(53, 53, 53)
-                .addComponent(lblBakiye, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblBakiye, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnParaIade, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnElliKrs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBirTl, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEkle1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(elliRadio)
-                            .addComponent(birRadio)
-                            .addComponent(besRadio)
-                            .addComponent(onRadio))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                    .addComponent(btnBesTl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOnTl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
                 .addComponent(lblBakiye, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnParaIade, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         lblBakiye.getAccessibleContext().setAccessibleName("lblBakiye");
         lblBakiye.getAccessibleContext().setAccessibleDescription("");
-        onRadio.getAccessibleContext().setAccessibleName("onRadio");
 
-        lblUrünBakiye.setBackground(new java.awt.Color(255, 51, 51));
-        lblUrünBakiye.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblUrunBakiye.setBackground(new java.awt.Color(255, 51, 51));
+        lblUrunBakiye.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
 
-        btnUrünEkle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnUrünEkle.setText("ÜRÜN EKLE");
-        btnUrünEkle.setActionCommand("btnUrünEkle");
-        btnUrünEkle.addActionListener(new java.awt.event.ActionListener() {
+        btnUrunEkle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnUrunEkle.setText("SATIN AL");
+        btnUrunEkle.setActionCommand("btnUrünEkle");
+        btnUrunEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUrünEkleActionPerformed(evt);
+                btnUrunEkleActionPerformed(evt);
             }
         });
 
-        btnGrupUrün.add(kolaRadio);
-        kolaRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        kolaRadio.setText(" KOLA");
-        kolaRadio.setActionCommand("15");
-
-        btnGrupUrün.add(fantaRadio);
-        fantaRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        fantaRadio.setText("FANTA");
-        fantaRadio.setToolTipText("");
-        fantaRadio.setActionCommand("20");
-
-        btnGrupUrün.add(gazozRadio);
-        gazozRadio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gazozRadio.setText("GAZOZ");
-        gazozRadio.setActionCommand("30");
-
-        btnUrünIade.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnUrünIade.setText("ÜRÜN İADE");
-        btnUrünIade.setActionCommand("btnUrünIade");
-        btnUrünIade.addActionListener(new java.awt.event.ActionListener() {
+        btnUrunIade.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnUrunIade.setText("ÜRÜN İADE");
+        btnUrunIade.setActionCommand("btnUrünIade");
+        btnUrunIade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUrünIadeActionPerformed(evt);
+                btnUrunIadeActionPerformed(evt);
             }
         });
 
         btnKola.setBackground(java.awt.Color.white);
         btnKola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/kola.png"))); // NOI18N
+        btnKola.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnKolaMouseClicked(evt);
+            }
+        });
 
         btnFanta.setBackground(java.awt.Color.white);
         btnFanta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/fanta.png"))); // NOI18N
+        btnFanta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFantaMouseClicked(evt);
+            }
+        });
 
         btnGazoz.setBackground(java.awt.Color.white);
         btnGazoz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resim/gazoz.png"))); // NOI18N
+        btnGazoz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGazozMouseClicked(evt);
+            }
+        });
+
+        lblKola.setAlignment(java.awt.Label.CENTER);
+        lblKola.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblKola.setText("KOLA : 15 TL");
+
+        lblFanta.setAlignment(java.awt.Label.CENTER);
+        lblFanta.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblFanta.setText("FANTA : 20 TL");
+
+        lblGazoz.setAlignment(java.awt.Label.CENTER);
+        lblGazoz.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblGazoz.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblGazoz.setText("GAZOZ : 30 TL");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -217,32 +206,26 @@ public class OtomatEkrani extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(kolaRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnKola, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(fantaRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnFanta, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnKola, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblKola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnFanta, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(73, 73, 73)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnUrünIade, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnUrunIade, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGazoz, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(gazozRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnUrünEkle, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                            .addComponent(lblUrünBakiye, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnGazoz, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblGazoz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUrunEkle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUrunBakiye, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -251,11 +234,11 @@ public class OtomatEkrani extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnUrünEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUrunEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUrünIade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUrunIade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(21, 21, 21)
-                        .addComponent(lblUrünBakiye, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblUrunBakiye, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,10 +246,10 @@ public class OtomatEkrani extends javax.swing.JFrame {
                             .addComponent(btnFanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnGazoz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fantaRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gazozRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kolaRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblKola, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                            .addComponent(lblFanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblGazoz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(59, 59, 59))
         );
 
@@ -275,100 +258,133 @@ public class OtomatEkrani extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
  
-    float bakiye=0;
- 
-    private void btnEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEkleActionPerformed
-        
-      
-       String secilenPara = btnGrupPara.getSelection().getActionCommand ();
-       
-        
-        switch(secilenPara)
-       {
-           case "50":
-               bakiye = (float) (bakiye + 0.50);
-           lblBakiye.setText(" Bakiye: " + Float.toString(bakiye)+ " TL");
-               break;
-               
-           case "1":
-               bakiye = (float) (bakiye + 1);
-           lblBakiye.setText(" Bakiye: " + Float.toString(bakiye)+ " TL");
-               break;
-               
-           case "5":
-               bakiye = (float) (bakiye + 5);
-           lblBakiye.setText(" Bakiye: " + Float.toString(bakiye)+ " TL");
-               break;
-               
-           case "10":
-               bakiye = (float) (bakiye + 10);
-           lblBakiye.setText(" Bakiye: " + Float.toString(bakiye)+ " TL");
-               break;
-           default:
-                JOptionPane.showMessageDialog(this, "Paranız İade Ediliyor","Lütfen Bekleyiniz",JOptionPane.INFORMATION_MESSAGE);            
-       }           
-    }//GEN-LAST:event_btnEkleActionPerformed
+    double bakiye = 0;
+    double paraBirim = 0;
+    int urunFiyat = 0;
+            
+    private void btnParaIadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParaIadeActionPerformed
+      Object[] txtConfirmButton = {"Evet", "Hayır"};
+      Object defaultSecenek = txtConfirmButton[0];
 
-    private void btnEkle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEkle1ActionPerformed
-        
-       JOptionPane.showMessageDialog(this, "Paranız İade Ediliyor","Lütfen Bekleyiniz",JOptionPane.INFORMATION_MESSAGE);
+        if (bakiye != 0) {
+            if (JOptionPane.showOptionDialog(this,
+             "Paranız İade Edilecek Onaylıyor Musunuz?",
+             "İade Onay",
+             JOptionPane.YES_NO_OPTION,
+             JOptionPane.QUESTION_MESSAGE,
+             null,
+             txtConfirmButton,
+             defaultSecenek) == JOptionPane.YES_OPTION) {          
+            JOptionPane.showMessageDialog(this, "Paranız İade Ediliyor","Lütfen Bekleyiniz",JOptionPane.INFORMATION_MESSAGE);
+        }
+        }
+
+             
         
         bakiye = 0;
-        lblBakiye.setText(" Bakiye: " + bakiye + " TL");
-    }//GEN-LAST:event_btnEkle1ActionPerformed
+        lblBakiye.setText(" Bakiye: 0.00 TL");
+    }//GEN-LAST:event_btnParaIadeActionPerformed
 
-    int bakiyeUrün=0;
-    private void btnUrünEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrünEkleActionPerformed
-        // TODO add your handling code here:
-        String secilenUrün = btnGrupUrün.getSelection().getActionCommand();
+    private void btnUrunEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunEkleActionPerformed
         
-        switch(secilenUrün)
-        {
-            case "15":
-            bakiyeUrün = (int) (bakiyeUrün + 15);
-            lblUrünBakiye.setText("Bakiye: " + Integer.toString(bakiyeUrün) + " TL");
-            break;
-            
-             case "20":
-            bakiyeUrün = (int) (bakiyeUrün + 20);
-            lblUrünBakiye.setText("Bakiye: " + Integer.toString(bakiyeUrün) + " TL");
-            break;
-            
-             case "30":
-            bakiyeUrün = (int) (bakiyeUrün + 30);
-            lblUrünBakiye.setText("Bakiye: " + Integer.toString(bakiyeUrün) + " TL");
-            break;
-        }       
-        
-    }//GEN-LAST:event_btnUrünEkleActionPerformed
+        if (urunFiyat == 0) {
+            JOptionPane.showMessageDialog(this, "Lütfen Ürün Seçiniz","Ürün Seçilmedi",JOptionPane.WARNING_MESSAGE);
+       return;
+        }        
+         if (urunFiyat > bakiye) {
+            JOptionPane.showMessageDialog(this, "Lütfen Para Ekleyiniz.","Yetersiz Bakiye",JOptionPane.WARNING_MESSAGE);
+        return;
+         }         
+        bakiye = bakiye - urunFiyat;
+        lblBakiye.setText(" Bakiye: " + Double.toString(bakiye)+ " TL");
+         JOptionPane.showMessageDialog(this, "Ürününüz Hazırlanıyor. Lütfen Bekleyiniz.",
+                 "Ürününüz Hazırlanıyor.",
+                 JOptionPane.OK_OPTION);      
+        urunFiyat = 0 ;
+        lblUrunBakiye.setText("Ürün Fiyatı: 0.00 TL");                
+    }//GEN-LAST:event_btnUrunEkleActionPerformed
 
-    private void btnUrünIadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrünIadeActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Ürün Silindi","Ürün Bilgisi",JOptionPane.INFORMATION_MESSAGE);
+    private void btnUrunIadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunIadeActionPerformed
+        if (urunFiyat != 0) {
+          JOptionPane.showMessageDialog(this, "Ürün Silindi","Ürün Bilgisi",JOptionPane.INFORMATION_MESSAGE);      
+        }
         
-        bakiyeUrün = 0;
-        lblUrünBakiye.setText(" Bakiye: " + bakiyeUrün + " TL");
-    }//GEN-LAST:event_btnUrünIadeActionPerformed
+        urunFiyat = 0;
+        lblUrunBakiye.setText(" Ürün Fiyatı: 0.00 TL");
+    }//GEN-LAST:event_btnUrunIadeActionPerformed
+
+    private void btnKolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKolaMouseClicked
+        
+        urunFiyat = 0;
+        urunFiyat = 15;
+        lblUrunBakiye.setText("Ürün Fiyatı: 15 TL");
+    }//GEN-LAST:event_btnKolaMouseClicked
+
+    private void btnFantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFantaMouseClicked
+        
+        urunFiyat = 0;
+        urunFiyat = 20;
+        lblUrunBakiye.setText("Ürün Fiyatı: 20 TL");
+    }//GEN-LAST:event_btnFantaMouseClicked
+
+    private void btnGazozMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGazozMouseClicked
+       
+        urunFiyat = 0;
+        urunFiyat = 30;
+        lblUrunBakiye.setText("Ürün Fiyatı: 30 TL");
+    }//GEN-LAST:event_btnGazozMouseClicked
+
+    private void btnElliKrsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElliKrsMouseClicked
+        
+        paraBirim = 0;
+        paraBirim  = 0.50;        
+        bakiye = (double) (bakiye + 0.50);
+        lblBakiye.setText(" Bakiye: " + Double.toString(bakiye)+ " TL");
+    }//GEN-LAST:event_btnElliKrsMouseClicked
+
+    private void btnBirTlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBirTlMouseClicked
+        
+        paraBirim = 0 ;
+        paraBirim = 1;
+        bakiye = (double) (bakiye + 1);
+        lblBakiye.setText(" Bakiye: " + Double.toString(bakiye)+ " TL");
+    }//GEN-LAST:event_btnBirTlMouseClicked
+
+    private void btnBesTlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBesTlMouseClicked
+       
+        paraBirim = 0 ;
+        paraBirim = 5;        
+        bakiye = (double) (bakiye + 5);
+        lblBakiye.setText(" Bakiye: " + Double.toString(bakiye)+ " TL");
+    }//GEN-LAST:event_btnBesTlMouseClicked
+
+    private void btnOnTlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOnTlMouseClicked
+       
+        paraBirim = 0 ;
+        paraBirim = 10;        
+        bakiye = (double) (bakiye + 10);
+        lblBakiye.setText(" Bakiye: " + Double.toString(bakiye)+ " TL");
+    }//GEN-LAST:event_btnOnTlMouseClicked
  
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -398,26 +414,23 @@ public class OtomatEkrani extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton besRadio;
-    private javax.swing.JRadioButton birRadio;
-    private javax.swing.JButton btnEkle;
-    private javax.swing.JButton btnEkle1;
+    private javax.swing.JButton btnBesTl;
+    private javax.swing.JButton btnBirTl;
+    private javax.swing.JButton btnElliKrs;
     private javax.swing.JButton btnFanta;
     private javax.swing.JButton btnGazoz;
-    private javax.swing.ButtonGroup btnGrupPara;
-    private javax.swing.ButtonGroup btnGrupUrün;
     private javax.swing.JButton btnKola;
-    private javax.swing.JButton btnUrünEkle;
-    private javax.swing.JButton btnUrünIade;
-    private javax.swing.JRadioButton elliRadio;
-    private javax.swing.JRadioButton fantaRadio;
-    private javax.swing.JRadioButton gazozRadio;
+    private javax.swing.JButton btnOnTl;
+    private javax.swing.JButton btnParaIade;
+    private javax.swing.JButton btnUrunEkle;
+    private javax.swing.JButton btnUrunIade;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton kolaRadio;
     private java.awt.Label lblBakiye;
-    private java.awt.Label lblUrünBakiye;
-    private javax.swing.JRadioButton onRadio;
+    private java.awt.Label lblFanta;
+    private java.awt.Label lblGazoz;
+    private java.awt.Label lblKola;
+    private java.awt.Label lblUrunBakiye;
     // End of variables declaration//GEN-END:variables
 }
