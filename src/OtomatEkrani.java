@@ -293,13 +293,12 @@ public class OtomatEkrani extends javax.swing.JFrame {
              txtConfirmButton,
              defaultSecenek) == JOptionPane.YES_OPTION) {          
             JOptionPane.showMessageDialog(this, "Paranız İade Ediliyor","Lütfen Bekleyiniz",JOptionPane.INFORMATION_MESSAGE);
-        }
-        }
-
-             
-        
-        bakiye = 0;
-        lblBakiye.setText(" Bakiye: 0.00 TL");
+           
+            bakiye = 0;
+            lblBakiye.setText(" Bakiye: 0.00 TL");
+            }            
+        }      
+               
     }//GEN-LAST:event_btnParaIadeActionPerformed
 
     private void btnUrunEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUrunEkleActionPerformed
